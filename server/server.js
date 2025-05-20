@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = 'your_mongodb';
+const MONGODB_URI = 'YOUR MONGODB URI';
 
 mongoose.connect(MONGODB_URI, {
   serverSelectionTimeoutMS: 5000

@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = 'mongodb+srv://aabishkar02:Qwerty123@cluster0.8gqgq.mongodb.net/whiteboard?retryWrites=true&w=majority';
+const MONGODB_URI = 'YOUR MONGODB URI';
 console.log('Connecting to MongoDB...');
 mongoose.connect(MONGODB_URI)
   .then(() => {
