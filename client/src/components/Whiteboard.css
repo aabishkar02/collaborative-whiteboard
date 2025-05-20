@@ -1,0 +1,339 @@
+/* Premium Whiteboard Styling */
+:root {
+  --primary-color: #4a6cff;
+  --primary-hover: #3a5cf9;
+  --secondary-color: #6c757d;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --card-bg: white;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+}
+
+.whiteboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--gradient-bg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.whiteboard-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.whiteboard-title {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  font-weight: 600;
+  margin: 0;
+  background: linear-gradient(90deg, var(--primary-color), #6a3ef5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.connection-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.whiteboard-status {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(240, 242, 245, 0.8);
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active-users {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(240, 242, 245, 0.8);
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+}
+
+.user-icon {
+  font-size: 1rem;
+}
+
+.whiteboard-toolbar {
+  display: flex;
+  background: var(--card-bg);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.toolbar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.tools-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.separator {
+  width: 1px;
+  height: 40px;
+  background-color: #eaecef;
+  margin: 0 0.75rem;
+}
+
+.tool-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.tool-button:hover {
+  background-color: #f0f3f9;
+  transform: translateY(-2px);
+}
+
+.tool-button.active {
+  background-color: #e9effd;
+  color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.color-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-button:hover,
+.color-button.active {
+  transform: scale(1.1);
+  border-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.brush-size {
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.brush-size.small {
+  width: 4px;
+  height: 4px;
+}
+
+.brush-size.medium {
+  width: 8px;
+  height: 8px;
+}
+
+.brush-size.large {
+  width: 12px;
+  height: 12px;
+}
+
+.action-button {
+  background-color: #f0f3f9;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+}
+
+.action-icon {
+  font-size: 1.2rem;
+}
+
+canvas {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--card-shadow);
+  border: none !important;
+  margin-bottom: 1.5rem;
+  touch-action: none; /* Prevents default touch actions */
+  max-width: 100%;
+  height: auto;
+}
+
+.whiteboard-footer {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.clear-button {
+  background: linear-gradient(90deg, var(--primary-color), #6a3ef5);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clear-button:hover {
+  background: linear-gradient(90deg, #3a5cf9, #5a2ef0);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.clear-button:active {
+  transform: translateY(0);
+}
+
+.whiteboard-id {
+  background-color: var(--card-bg);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-button:hover {
+  background-color: #f0f3f9;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .whiteboard-container {
+    padding: 1rem;
+  }
+  
+  .whiteboard-toolbar {
+    padding: 0.5rem 1rem;
+    justify-content: center;
+  }
+  
+  .separator {
+    display: none;
+  }
+  
+  .toolbar-section {
+    width: 100%;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .whiteboard-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .connection-info {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .whiteboard-toolbar {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .whiteboard-footer {
+    width: 100%;
+  }
+  
+  .clear-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Animation for copy button success */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.copy-button:active {
+  animation: pulse 0.3s ease;
+} 
